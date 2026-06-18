@@ -1,20 +1,18 @@
-# FP Locações - Catálogo de Ranchos
+Estrutura FP Locações
 
-## Como usar
-1. Abra o arquivo `index.html`.
-2. Procure a parte `const ranchos = [...]`.
-3. Troque os exemplos pelos ranchos reais.
-4. Para cada rancho, coloque:
-   - nome
-   - cidade
-   - capacidade
-   - itens
-   - linkDrive com a pasta pública do rancho
-   - foto, se tiver um link direto de imagem
+Arquivos principais:
+- index.html: página inicial com banner, logo e cidades
+- cidades/rifaina.html: ranchos da cidade Rifaina
+- cidades/miguelopolis.html: ranchos da cidade Miguelópolis
+- ranchos/rancho-vista-linda.html: página individual do rancho
+- ranchos/recanto-azul.html: página individual do rancho
 
-## Publicar no GitHub Pages
-1. Crie um repositório no GitHub.
-2. Envie o arquivo `index.html`.
-3. Vá em Settings > Pages.
-4. Em Branch, selecione `main` e `/root`.
-5. Salve e use o link gerado pelo GitHub Pages.
+Na raiz do repositório, mantenha:
+- banner.jpg
+- logo-fp.png
+
+Fotos esperadas:
+- imagens/cidades/rifaina.jpg
+- imagens/cidades/miguelopolis.jpg
+- imagens/vista-linda/01.jpg até 05.jpg
+- imagens/recanto-azul/01.jpg até 05.jpg
