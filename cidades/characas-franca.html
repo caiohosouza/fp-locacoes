@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chácaras em Franca | FP Locações</title>
+<style>
+:root{
+  --laranja:#25D366;
+  --cinza:#3f4147;
+  --cinza-escuro:#25262a;
+  --branco:#ffffff;
+  --fundo:#f5f5f5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--fundo);color:#333}
+a{text-decoration:none;color:inherit}
+.hero{
+  min-height:70vh;
+  background:
+    linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.55)),
+    url('banner.jpg');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:30px 20px;
+}
+.hero.inner{
+  min-height:360px;
+  background:
+    linear-gradient(rgba(0,0,0,.52),rgba(0,0,0,.58)),
+    url('../banner.jpg');
+  background-size:cover;
+  background-position:center;
+}
+.hero-content{max-width:780px}
+.logo{
+  width:122px;
+  height:122px;
+  border-radius:50%;
+  object-fit:cover;
+  background:white;
+  padding:6px;
+  margin-bottom:20px;
+  box-shadow:0 8px 28px rgba(0,0,0,.25);
+}
+.hero h1{font-size:clamp(2.4rem,6vw,4.8rem);line-height:1;margin-bottom:12px}
+.hero p{font-size:1.15rem;line-height:1.5;opacity:.95;max-width:680px;margin:0 auto}
+.btn{
+  display:inline-block;
+  background:var(--laranja);
+  color:white;
+  padding:14px 22px;
+  border-radius:999px;
+  font-weight:bold;
+  margin-top:24px;
+  box-shadow:0 8px 20px rgba(0,0,0,.16);
+}
+.btn.dark{background:var(--cinza)}
+.btn.light{background:white;color:var(--cinza)}
+.section{padding:52px 20px;max-width:1200px;margin:auto}
+.title{text-align:center;margin-bottom:12px;color:var(--cinza);font-size:2rem}
+.subtitle{text-align:center;color:#666;margin-bottom:34px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:25px}
+.card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+  transition:.18s ease;
+}
+.card:hover{transform:translateY(-3px)}
+.card img{width:100%;height:230px;object-fit:cover;background:#ddd}
+.card-content{padding:22px}
+.card h3{color:var(--cinza);font-size:1.45rem;margin-bottom:8px}
+.card p{color:#666;line-height:1.4}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.actions .btn{margin-top:0;border-radius:12px;padding:12px 16px}
+.topbar{
+  position:absolute;
+  top:18px;
+  left:18px;
+  z-index:2;
+}
+.back{
+  display:inline-block;
+  background:rgba(255,255,255,.9);
+  color:var(--cinza);
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:bold;
+}
+.whatsapp{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  background:#25D366;
+  color:white;
+  padding:15px 18px;
+  border-radius:999px;
+  font-weight:bold;
+  box-shadow:0 8px 22px rgba(0,0,0,.25);
+  z-index:10;
+}
+footer{
+  background:var(--cinza);
+  color:white;
+  text-align:center;
+  padding:30px 20px;
+  margin-top:30px;
+}
+@media(max-width:640px){
+  .hero{min-height:620px}
+  .hero.inner{min-height:340px}
+  .logo{width:105px;height:105px}
+  .section{padding:38px 16px}
+  .card img{height:220px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"><a class="back" href="../index.html">← Voltar</a></div>
+
+<section class="hero inner">
+  <div class="hero-content">
+    <img class="logo" src="../logo-fp.png" alt="FP Locações">
+    <h1>Franca</h1>
+    <p>Chácaras disponíveis para locação em Franca.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="title">Chácaras em Franca</h2>
+  <p class="subtitle">Escolha uma chácara para ver fotos, informações e consultar disponibilidade.</p>
+
+  <div class="grid">
+    <div class="card">
+      <img src="../imagens/Chacara-campo-verde/01.jpg" alt="Chácara Campo Verde">
+      <div class="card-content">
+        <h3>Chácara Campo Verde</h3>
+        <p>[Falta descrição]</p>
+        <div class="actions">
+          <a class="btn dark" href="../ranchos/campo-verde.html">Ver detalhes</a>
+          <a class="btn" href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20Chácara%20Campo%20Verde%20em%20Franca." target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../imagens/Chacara-do-nobre/01.jpg" alt="Chácara do Nobre">
+      <div class="card-content">
+        <h3>Chácara do Nobre</h3>
+        <p>[Falta descrição]</p>
+        <div class="actions">
+          <a class="btn dark" href="../ranchos/chacara-do-nobre.html">Ver detalhes</a>
+          <a class="btn" href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20Chácara%20do%20Nobre%20em%20Franca." target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../imagens/Chacara-polo/01.jpg" alt="Chácara Polo">
+      <div class="card-content">
+        <h3>Chácara Polo</h3>
+        <p>[Falta descrição]</p>
+        <div class="actions">
+          <a class="btn dark" href="../ranchos/rancho-vista-linda.html">Ver detalhes</a>
+          <a class="btn" href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20Chácara%20Polo%20em%20Franca." target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../imagens/Chacara-por-do-sol/01.jpg" alt="Chácara por do Sol">
+      <div class="card-content">
+        <h3>Chácara por do Sol</h3>
+        <p>[Falta descrição]</p>
+        <div class="actions">
+          <a class="btn dark" href="../ranchos/rancho-vista-linda.html">Ver detalhes</a>
+          <a class="btn" href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20Chácara%20por do Sol%20em%20Franca." target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../imagens/Chacara-recanto-esperanca-01/01.jpg" alt="Chácara Recanto Esperança">
+      <div class="card-content">
+        <h3>Chácara Recanto Esperança</h3>
+        <p>[Falta descrição]</p>
+        <div class="actions">
+          <a class="btn dark" href="../ranchos/rancho-vista-linda.html">Ver detalhes</a>
+          <a class="btn" href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20Chácara%20Recanto Esperança%20em%20Franca." target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../imagens/Chacara-reis/01.jpg" alt="Chácara Reis">
+      <div class="card-content">
+        <h3>Chácara Reis</h3>
+        <p>[Falta descrição]</p>
+        <div class="actions">
+          <a class="btn dark" href="../ranchos/rancho-vista-linda.html">Ver detalhes</a>
+          <a class="btn" href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20Chácara%20Reis%20em%20Franca." target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../imagens/Chacara-renato/01.jpg" alt="Chácara Renato">
+      <div class="card-content">
+        <h3>Chácara Renato</h3>
+        <p>[Falta descrição]</p>
+        <div class="actions">
+          <a class="btn dark" href="../ranchos/rancho-vista-linda.html">Ver detalhes</a>
+          <a class="btn" href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20Chácara%20Renato%20em%20Franca." target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../imagens/Chacara-rose/01.jpeg" alt="Chácara Rose">
+      <div class="card-content">
+        <h3>Chácara Rose</h3>
+        <p>[Falta descrição]</p>
+        <div class="actions">
+          <a class="btn dark" href="../ranchos/rancho-vista-linda.html">Ver detalhes</a>
+          <a class="btn" href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20Chácara%20Rose%20em%20Franca." target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../imagens/Chacara-ruti/01.jpg" alt="Chácara Ruti">
+      <div class="card-content">
+        <h3>Chácara Ruti</h3>
+        <p>[Falta descrição]</p>
+        <div class="actions">
+          <a class="btn dark" href="../ranchos/rancho-vista-linda.html">Ver detalhes</a>
+          <a class="btn" href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20Chácara%20Ruti%20em%20Franca." target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../imagens/Chacara-saida-p-claraval/01.jpg" alt="Chácara Saída Claraval">
+      <div class="card-content">
+        <h3>Chácara Saída Claraval</h3>
+        <p>[Falta descrição]</p>
+        <div class="actions">
+          <a class="btn dark" href="../ranchos/rancho-vista-linda.html">Ver detalhes</a>
+          <a class="btn" href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20Chácara%20Saída Claraval%20em%20Franca." target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../imagens/Chacara-saida-p-cristais-paulista/01.jpg" alt="Chácara Saída Cristais Paulistas">
+      <div class="card-content">
+        <h3>Chácara Saída Cristais Paulistas</h3>
+        <p>[Falta descrição]</p>
+        <div class="actions">
+          <a class="btn dark" href="../ranchos/rancho-vista-linda.html">Ver detalhes</a>
+          <a class="btn" href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20Chácara%20Saída Cristais Paulistas%20em%20Franca." target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../imagens/Chacara-saida-p-Ibiraci-01/01.jpg" alt="Chácara Saída Ibiraci 01">
+      <div class="card-content">
+        <h3>Chácara Saída Ibiraci 01</h3>
+        <p>[Falta descrição]</p>
+        <div class="actions">
+          <a class="btn dark" href="../ranchos/rancho-vista-linda.html">Ver detalhes</a>
+          <a class="btn" href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20Chácara%20Saída Ibiraci 01%20em%20Franca." target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../imagens/Chacara-saida-p-Ibiraci-02/01.jpg" alt="Chácara Saída Ibiraci 02">
+      <div class="card-content">
+        <h3>Chácara Saída Ibiraci 02</h3>
+        <p>[Falta descrição]</p>
+        <div class="actions">
+          <a class="btn dark" href="../ranchos/rancho-vista-linda.html">Ver detalhes</a>
+          <a class="btn" href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20Chácara%20Saída Ibiraci 02%20em%20Franca." target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../imagens/Chacara-william/01.jpg" alt="Chácara William">
+      <div class="card-content">
+        <h3>Chácara William</h3>
+        <p>[Falta descrição]</p>
+        <div class="actions">
+          <a class="btn dark" href="../ranchos/rancho-vista-linda.html">Ver detalhes</a>
+          <a class="btn" href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20Chácara%20William%20em%20Franca." target="_blank">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/5516993366708" target="_blank">WhatsApp</a>
+<footer>FP Locações • (16) 99336-6708</footer>
+
+</body>
+</html>
