@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chácara do Nobre | FP Locações</title>
+
+<style>
+:root{
+  --laranja:#f28c45;
+  --cinza:#3f4147;
+  --cinza-escuro:#25262a;
+  --branco:#ffffff;
+  --fundo:#f5f5f5;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--fundo);
+  color:#333;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:70vh;
+  background:
+    linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.55)),
+    url('banner.jpg');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:30px 20px;
+}
+
+.hero.inner{
+  min-height:360px;
+  background:
+    linear-gradient(rgba(0,0,0,.52),rgba(0,0,0,.58)),
+    url('../banner.jpg');
+  background-size:cover;
+  background-position:center;
+}
+
+.hero-content{
+  max-width:780px;
+}
+
+.logo{
+  width:122px;
+  height:122px;
+  border-radius:50%;
+  object-fit:cover;
+  background:white;
+  padding:6px;
+  margin-bottom:20px;
+  box-shadow:0 8px 28px rgba(0,0,0,.25);
+}
+
+.hero h1{
+  font-size:clamp(2.4rem,6vw,4.8rem);
+  line-height:1;
+  margin-bottom:12px;
+}
+
+.hero p{
+  font-size:1.15rem;
+  line-height:1.5;
+  opacity:.95;
+  max-width:680px;
+  margin:0 auto;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.btn{
+  display:inline-block;
+  background:var(--laranja);
+  color:white;
+  padding:14px 22px;
+  border-radius:999px;
+  font-weight:bold;
+  margin-top:24px;
+  box-shadow:0 8px 20px rgba(0,0,0,.16);
+}
+
+.btn.dark{
+  background:var(--cinza);
+}
+
+.btn.light{
+  background:white;
+  color:var(--cinza);
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section{
+  padding:52px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:12px;
+  color:var(--cinza);
+  font-size:2rem;
+}
+
+.subtitle{
+  text-align:center;
+  color:#666;
+  margin-bottom:34px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+  transition:.18s ease;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+}
+
+.card img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  background:#ddd;
+}
+
+.card-content{
+  padding:22px;
+}
+
+.card h3{
+  color:var(--cinza);
+  font-size:1.45rem;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#666;
+  line-height:1.4;
+}
+
+/* =========================
+   AÇÕES
+========================= */
+
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.actions .btn{
+  margin-top:0;
+  border-radius:12px;
+  padding:12px 16px;
+}
+
+/* =========================
+   TOPO
+========================= */
+
+.topbar{
+  position:absolute;
+  top:18px;
+  left:18px;
+  z-index:2;
+}
+
+.back{
+  display:inline-block;
+  background:rgba(255,255,255,.9);
+  color:var(--cinza);
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:bold;
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  background:#25D366;
+  color:white;
+  padding:15px 18px;
+  border-radius:999px;
+  font-weight:bold;
+  box-shadow:0 8px 22px rgba(0,0,0,.25);
+  z-index:10;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:var(--cinza);
+  color:white;
+  text-align:center;
+  padding:30px 20px;
+  margin-top:30px;
+}
+
+/* =========================
+   GALERIA
+========================= */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:12px;
+}
+
+.gallery img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  border-radius:16px;
+  background:#ddd;
+  cursor:pointer;
+  transition:transform .2s ease, filter .2s ease;
+}
+
+.gallery img:hover{
+  transform:scale(1.02);
+  filter:brightness(.92);
+}
+
+/* =========================
+   INFO BOX
+========================= */
+
+.info-box{
+  background:white;
+  border-radius:20px;
+  padding:24px;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+  margin-bottom:26px;
+}
+
+.info-box p{
+  line-height:1.6;
+  color:#555;
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:40px 70px;
+}
+
+.lightbox.active{
+  display:flex;
+}
+
+/* Imagem original em tamanho máximo possível */
+.lightbox img{
+  max-width:95vw;
+  max-height:90vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border-radius:8px;
+  box-shadow:0 10px 50px rgba(0,0,0,.5);
+}
+
+/* =========================
+   BOTÃO FECHAR
+========================= */
+
+.lightbox-close{
+  position:absolute;
+  top:18px;
+  right:25px;
+  width:45px;
+  height:45px;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.15);
+  color:white;
+  font-size:30px;
+  line-height:1;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.lightbox-close:hover{
+  background:rgba(255,255,255,.3);
+}
+
+/* =========================
+   SETAS
+========================= */
+
+.lightbox-prev,
+.lightbox-next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:52px;
+  height:52px;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.15);
+  color:white;
+  font-size:34px;
+  cursor:pointer;
+  transition:.2s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover{
+  background:rgba(255,255,255,.3);
+}
+
+.lightbox-prev{
+  left:20px;
+}
+
+.lightbox-next{
+  right:20px;
+}
+
+/* =========================
+   CONTADOR
+========================= */
+
+.lightbox-counter{
+  position:absolute;
+  bottom:18px;
+  left:50%;
+  transform:translateX(-50%);
+  color:white;
+  background:rgba(0,0,0,.45);
+  padding:7px 14px;
+  border-radius:20px;
+  font-size:14px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:640px){
+
+  .hero{
+    min-height:620px;
+  }
+
+  .hero.inner{
+    min-height:340px;
+  }
+
+  .logo{
+    width:105px;
+    height:105px;
+  }
+
+  .section{
+    padding:38px 16px;
+  }
+
+  .card img{
+    height:220px;
+  }
+
+  .lightbox{
+    padding:50px 15px;
+  }
+
+  .lightbox img{
+    max-width:100%;
+    max-height:82vh;
+  }
+
+  .lightbox-prev,
+  .lightbox-next{
+    width:42px;
+    height:42px;
+    font-size:26px;
+  }
+
+  .lightbox-prev{
+    left:8px;
+  }
+
+  .lightbox-next{
+    right:8px;
+  }
+
+  .lightbox-close{
+    top:10px;
+    right:12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     BOTÃO VOLTAR
+========================= -->
+
+<div class="topbar">
+  <a class="back" href="../cidades/characas-franca.html">
+    ← Voltar
+  </a>
+</div>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+  class="hero inner"
+  style="background:linear-gradient(rgba(0,0,0,.52),rgba(0,0,0,.58)),url('../imagens/Chacara-do-nobre/01.jpg');background-size:cover;background-position:center;"
+>
+
+  <div class="hero-content">
+
+    <img
+      class="logo"
+      src="../logo-fp.png"
+      alt="FP Locações"
+    >
+
+    <h1>Chácara do Nobre</h1>
+
+    <p>
+      Chácara do Nobre • Até 15 pessoas
+    </p>
+
+    <a
+      class="btn"
+      href="https://wa.me/5516993366708?text=Ol%C3%A1%2C%20quero%20consultar%20disponibilidade%20da%20Ch%C3%A1cara%20do%20Nobre."
+      target="_blank"
+    >
+      Consultar disponibilidade
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTEÚDO
+========================= -->
+
+<section class="section">
+
+  <!-- INFORMAÇÕES -->
+
+  <div class="info-box">
+
+    <h2>Informações da chácara</h2>
+
+    <p>
+      Coloque aqui as principais informações: capacidade,
+      quartos, banheiros, piscina, churrasqueira, regras,
+      horários e observações.
+    </p>
+
+    <div class="actions">
+
+      <a
+        class="btn"
+        href="https://wa.me/5516993366708"
+        target="_blank"
+      >
+        Chamar no WhatsApp
+      </a>
+
+      <a
+        class="btn dark"
+        href="https://drive.google.com/drive/folders/1v5zfs5ros_uFVmWZC1LVB7IxOFnH7odl?usp=drive_link"
+        target="_blank"
+      >
+        Ver álbum completo no Drive
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       GALERIA
+  ========================= -->
+
+  <h2 class="title">
+    Galeria
+  </h2>
+
+  <p class="subtitle">
+    Fotos principais da chácara.
+  </p>
+
+  <div class="gallery">
+
+    <img
+      src="../imagens/Chacara-do-nobre/01.jpg"
+      alt="Chácara do Nobre"
+    >
+
+    <img
+      src="../imagens/Chacara-do-nobre/02.jpg"
+      alt="Chácara do Nobre"
+    >
+
+    <img
+      src="../imagens/Chacara-do-nobre/03.jpg"
+      alt="Chácara do Nobre"
+    >
+
+    <img
+      src="../imagens/Chacara-do-nobre/04.jpg"
+      alt="Chácara do Nobre"
+    >
+
+    <img
+      src="../imagens/Chacara-do-nobre/05.jpg"
+      alt="Chácara do Nobre"
+    >
+
+    <img
+      src="../imagens/Chacara-do-nobre/06.jpg"
+      alt="Chácara do Nobre"
+    >
+
+    <img
+      src="../imagens/Chacara-do-nobre/07.jpg"
+      alt="Chácara do Nobre"
+    >
+
+    <img
+      src="../imagens/Chacara-do-nobre/08.jpg"
+      alt="Chácara do Nobre"
+    >
+
+    <img
+      src="../imagens/Chacara-do-nobre/09.jpg"
+      alt="Chácara do Nobre"
+    >
+
+    <img
+      src="../imagens/Chacara-do-nobre/10.jpg"
+      alt="Chácara do Nobre"
+    >
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     LIGHTBOX
+========================= -->
+
+<div class="lightbox" id="lightbox">
+
+  <button
+    class="lightbox-close"
+    id="lightboxClose"
+    aria-label="Fechar"
+  >
+    &times;
+  </button>
+
+  <button
+    class="lightbox-prev"
+    id="lightboxPrev"
+    aria-label="Foto anterior"
+  >
+    &#10094;
+  </button>
+
+  <img
+    id="lightboxImage"
+    src=""
+    alt="Imagem ampliada"
+  >
+
+  <button
+    class="lightbox-next"
+    id="lightboxNext"
+    aria-label="Próxima foto"
+  >
+    &#10095;
+  </button>
+
+  <div
+    class="lightbox-counter"
+    id="lightboxCounter"
+  >
+    1 / 10
+  </div>
+
+</div>
+
+
+<!-- =========================
+     WHATSAPP
+========================= -->
+
+<a
+  class="whatsapp"
+  href="https://wa.me/5516993366708"
+  target="_blank"
+>
+  WhatsApp
+</a>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+  FP Locações • (16) 99336-6708
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT DA GALERIA
+========================= -->
+
+<script>
+
+const galleryImages = document.querySelectorAll('.gallery img');
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+
+const lightboxCounter = document.getElementById('lightboxCounter');
+
+let currentImage = 0;
+
+
+/* =========================
+   ABRIR IMAGEM
+========================= */
+
+function openLightbox(index){
+
+  currentImage = index;
+
+  lightboxImage.src = galleryImages[currentImage].src;
+
+  lightboxImage.alt = galleryImages[currentImage].alt;
+
+  lightboxCounter.textContent =
+    `${currentImage + 1} / ${galleryImages.length}`;
+
+  lightbox.classList.add('active');
+
+  document.body.style.overflow = 'hidden';
+}
+
+
+/* =========================
+   FECHAR
+========================= */
+
+function closeLightbox(){
+
+  lightbox.classList.remove('active');
+
+  document.body.style.overflow = '';
+}
+
+
+/* =========================
+   PRÓXIMA FOTO
+========================= */
+
+function showNext(){
+
+  currentImage++;
+
+  if(currentImage >= galleryImages.length){
+    currentImage = 0;
+  }
+
+  openLightbox(currentImage);
+}
+
+
+/* =========================
+   FOTO ANTERIOR
+========================= */
+
+function showPrevious(){
+
+  currentImage--;
+
+  if(currentImage < 0){
+    currentImage = galleryImages.length - 1;
+  }
+
+  openLightbox(currentImage);
+}
+
+
+/* =========================
+   CLIQUE NAS FOTOS
+========================= */
+
+galleryImages.forEach((image,index)=>{
+
+  image.addEventListener('click',()=>{
+
+    openLightbox(index);
+
+  });
+
+});
+
+
+/* =========================
+   BOTÃO FECHAR
+========================= */
+
+lightboxClose.addEventListener(
+  'click',
+  closeLightbox
+);
+
+
+/* =========================
+   BOTÃO PRÓXIMA
+========================= */
+
+lightboxNext.addEventListener(
+  'click',
+  showNext
+);
+
+
+/* =========================
+   BOTÃO ANTERIOR
+========================= */
+
+lightboxPrev.addEventListener(
+  'click',
+  showPrevious
+);
+
+
+/* =========================
+   CLICAR FORA DA IMAGEM
+========================= */
+
+lightbox.addEventListener('click',(event)=>{
+
+  if(event.target === lightbox){
+
+    closeLightbox();
+
+  }
+
+});
+
+
+/* =========================
+   TECLADO
+========================= */
+
+document.addEventListener('keydown',(event)=>{
+
+  if(!lightbox.classList.contains('active')){
+    return;
+  }
+
+  if(event.key === 'Escape'){
+    closeLightbox();
+  }
+
+  if(event.key === 'ArrowRight'){
+    showNext();
+  }
+
+  if(event.key === 'ArrowLeft'){
+    showPrevious();
+  }
+
+});
+
+</script>
+
+</body>
+</html>
